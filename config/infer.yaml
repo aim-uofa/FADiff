@@ -1,0 +1,58 @@
+# Configuration for inference on SE(3) diffusion experiments.
+defaults:
+  - base
+
+data:
+  motif_dir: ./data/virtual_motif_2/100-pdb_2-motif_sequential_08D_01M_2024Y_15h_28m_55s
+  motif:
+    min_len: 20
+    max_len: 80
+    num_motifs: 3
+    type: sequential # sequential or spatial
+  # # rfdiffusion_motif
+  # motif_csv_path: data/rf_dif_motif/se3_output/metadata.csv
+  # motif_mask_path: data/rf_dif_motif/motif_mask.json
+
+  # sz_motif
+  motif_csv_path: data/real_motif_sz/se3_output_full_name/sub_metadata.csv
+  motif_mask_path: data/real_motif_sz/motif.json
+
+inference:
+  name: null
+  gpu_id: 0  # CUDA GPU to use
+  seed: 42
+
+  type: 'triple_sz_motif'  # 'uncondition' or 'virtual_motif' or 'rfdiffusion_motif' or 'sz_motif' or 'double_sz_motif' or 'triple_sz_motif'
+  self_consistency: True  # Whether to use self-consistency metric.
+
+  # Directory of software, weights, and outputs.
+  pt_hub_dir: ./.cache/torch/
+  pmpnn_dir: ./ProteinMPNN/
+  output_dir: ./inference_outputs/sz_motif/main/2_for_3/scale_2
+
+  # Path to model weights.
+  # weights_path: ckpt/single_motif_baseline_16batch_1epoch/18D_12M_2023Y_18h_35m_25s/step_20000.pth
+  weights_path: ./ckpt/8_gpu_228_rot_3/ckpt/step_90000.pth
+
+  diffusion:
+    # Number of steps.
+    num_t: 500
+    # Analogous to sampling temperature.
+    noise_scale: 1.0
+    # Final t.
+    min_t: 0.01
+
+  samples:
+    # Number of motif to sample.
+    num_sample_motif: 10
+    # Number of backbone samples per sequence length.
+    samples_per_length: 5 #10
+    # Number of ESMFdold samples per backbone sample.
+    seq_per_sample: 8
+    # Minimum sequence length to sample.
+    min_length: 160
+    # Maximum sequence length to sample.
+    max_length: 500
+    # gap between lengths to sample. i.e. this script will sample all lengths
+    # in range(min_length, max_length, length_step)
+    length_step: 50 #10

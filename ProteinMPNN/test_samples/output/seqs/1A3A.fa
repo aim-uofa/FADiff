@@ -1,0 +1,8 @@
+>1A3A, score=2.0217, global_score=2.0217, fixed_chains=[], designed_chains=['A'], model_name=v_48_020, git_hash=unknown, seed=37
+EKLTPTYLGESIAVPHG
+>T=0.1, sample=1, score=1.2399, global_score=1.2399, seq_recovery=0.2941
+EAVRPSDLGNGVSAPRE
+>T=0.1, sample=2, score=1.3210, global_score=1.3210, seq_recovery=0.4706
+EKVKPSYLGDGKAAPSE
+>T=0.1, sample=3, score=1.2754, global_score=1.2754, seq_recovery=0.2941
+ERIRPSDLGNGVRAPSE

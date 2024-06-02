@@ -1,0 +1,36 @@
+defaults:
+  - base
+
+data:
+  cluster_path: null
+  motif:
+    min_len: 20
+    max_len: 80
+    num_motifs: 2
+    type: sequential # sequential or spatial
+
+diffuser:
+  so3:
+    use_cached_score: True
+
+experiment:
+  name: one_transform
+  num_epoch: 10000
+  batch_size: 16
+  num_loader_workers: 64
+  prefetch_factor: 32
+  max_squared_res: 300000
+  rot_loss_t_threshold: 0.0
+  rot_loss_weight: 1.0
+  separate_rot_loss: False
+  sample_mode: time_batch
+  num_gpus: 8
+  use_ddp : True
+  early_ckpt: False
+  use_wandb: False
+  #warm_start: weights/pretrain
+
+hydra:
+  sweeper:
+    params:
+

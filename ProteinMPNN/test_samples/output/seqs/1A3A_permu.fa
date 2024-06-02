@@ -1,0 +1,8 @@
+>1A3A_permu, score=1.9912, global_score=1.9912, fixed_chains=[], designed_chains=['A'], model_name=v_48_020, git_hash=unknown, seed=37
+SIAEKLTPTPHGYLGVE
+>T=0.1, sample=1, score=1.4674, global_score=1.4674, seq_recovery=0.5882
+GLAEKEKPAPAPYLGVE
+>T=0.1, sample=2, score=1.4456, global_score=1.4456, seq_recovery=0.5294
+GTAEAVRPAPSEYLGVE
+>T=0.1, sample=3, score=1.4745, global_score=1.4745, seq_recovery=0.5294
+GLSEEIKPTPSPYLGVE
