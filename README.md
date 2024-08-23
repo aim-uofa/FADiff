@@ -119,9 +119,9 @@ python -m torch.distributed.run \
 
 ## License
 For non-commercial academic use, this project is licensed under [the 2-clause BSD License](https://opensource.org/license/bsd-2-clause). 
-For commercial use, please contact [Chunhua Shen](chhshen@gmail.com).
+For commercial use, please contact [Chunhua Shen](mailto:chhshen@gmail.com).
 
 
 
 ## Acknowledgements
-*This code is built upon FrameDiff "SE(3) diffusion model with application to protein backbone generation": https://arxiv.org/abs/2302.02277
+This code is built upon FrameDiff "SE(3) diffusion model with application to protein backbone generation": https://arxiv.org/abs/2302.02277
